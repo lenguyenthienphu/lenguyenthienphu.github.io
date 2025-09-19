@@ -7,118 +7,117 @@
   <link rel="stylesheet" href="style.css" />
 
   <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
-
-  <!-- AOS Animate CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <!-- Captcha Overlay -->
-  <!-- Captcha Overlay -->
-<div id="captcha-overlay">
-  <div class="captcha-box">
-    <h2>🔒 Please verify you are human</h2>
-    <div class="cf-turnstile"
-         data-sitekey="0x4AAAAAAB2LybBMUumXd1k-"
-         data-theme="dark"
-         data-size="normal"
-         data-action="always-verify"
-         data-callback="onCaptchaSuccess">
+  <div id="captcha-overlay">
+    <div class="captcha-box">
+      <h2>🔒 Please verify you are human</h2>
+      <div class="cf-turnstile"
+           data-sitekey="0x4AAAAAAB2LybBMUumXd1k-"
+           data-theme="dark"
+           data-size="normal"
+           data-callback="onCaptchaSuccess">
+      </div>
     </div>
   </div>
-</div>
 
-  <!-- Header -->
-  <header>
-    <nav>
-      <h1 class="logo">Phu<span>.</span></h1>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#certs">Certificates</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="hero" data-aos="fade-up">
-      <img src="assets/profile.jpg" alt="Profile" class="profile-pic">
-      <h2>Hello, I'm <span>Le Nguyen Thien Phu</span></h2>
-      <p>Cybersecurity Graduate | FPT University</p>
-      <a href="#contact" class="btn">Get In Touch</a>
-    </div>
-  </header>
-
-  <!-- About -->
-  <section id="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>
-      I am a graduate in Information Security from FPT University. 
-      Passionate about Web Application Security, AI-driven WAF, and data-driven cybersecurity. 
-      GPA: <strong>3.6/4.0</strong>.
-    </p>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills">
-    <h2 data-aos="fade-up">Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card" data-aos="zoom-in">Web Security</div>
-      <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">OWASP Top 10</div>
-      <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">Python</div>
-      <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">Machine Learning</div>
-      <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">Linux & Networking</div>
-      <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">Cisco Networking</div>
-    </div>
-  </section>
-
-  <!-- Certificates -->
-  <section id="certs">
-    <h2 data-aos="fade-up">Certificates</h2>
-    <div class="cert-grid">
-      <div class="cert-card" data-aos="flip-left">
-        <img src="assets/certificate1.png" alt="Cisco Cert">
-        <p>Cisco CyberOps Associate</p>
+  <!-- Main Content -->
+  <div id="site-content" style="display:none;">
+    <!-- Header -->
+    <header>
+      <nav>
+        <h1 class="logo">Phu<span>.</span></h1>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#certs">Certificates</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hero">
+        <img src="assets/profile.jpg" alt="Profile" class="profile-pic">
+        <h2>Hello, I'm <span>Le Nguyen Thien Phu</span></h2>
+        <p>Cybersecurity Graduate | FPT University</p>
+        <a href="#contact" class="btn">Get In Touch</a>
       </div>
-      <div class="cert-card" data-aos="flip-left" data-aos-delay="200">
-        <img src="assets/certificate2.png" alt="Other Cert">
-        <p>Other Cybersecurity Certificate</p>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am a graduate in Information Security from FPT University. 
+        Passionate about Web Application Security, AI-driven WAF, and data-driven cybersecurity. 
+        GPA: <strong>3.6/4.0</strong>.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">Web Security</div>
+        <div class="skill-card">OWASP Top 10</div>
+        <div class="skill-card">Python</div>
+        <div class="skill-card">Machine Learning</div>
+        <div class="skill-card">Linux & Networking</div>
+        <div class="skill-card">Cisco Networking</div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" data-aos="fade-up">
-    <h2>Contact Me</h2>
-    <form action="https://formspree.io/f/xnnbeznb" method="POST" class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <div class="contact-info">
-      <p><i class="fas fa-envelope"></i> thienphu120203@gmail.com</p>
-      <p><i class="fab fa-github"></i> 
-         <a href="https://github.com/lenguyenthienphu">github.com/lenguyenthienphu</a></p>
-      <p><i class="fab fa-linkedin"></i> 
-         <a href="#">linkedin.com/in/thienphu</a></p>
-    </div>
-  </section>
+    <!-- Certificates -->
+    <section id="certs">
+      <h2>Certificates</h2>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <img src="assets/certificate1.png" alt="Cisco Cert">
+          <p>Cisco CyberOps Associate</p>
+        </div>
+        <div class="cert-card">
+          <img src="assets/certificate2.png" alt="Other Cert">
+          <p>Other Cybersecurity Certificate</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Le Nguyen Thien Phu. All rights reserved.</p>
-  </footer>
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/xnnbeznb" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> thienphu120203@gmail.com</p>
+        <p><i class="fab fa-github"></i> 
+          <a href="https://github.com/lenguyenthienphu">github.com/lenguyenthienphu</a></p>
+        <p><i class="fab fa-linkedin"></i> 
+          <a href="#">linkedin.com/in/thienphu</a></p>
+      </div>
+    </section>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Le Nguyen Thien Phu. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- Cloudflare Turnstile -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script>
-    AOS.init({ duration: 1000, once: true });
-    function onCaptchaSuccess(token) {
+    function onCaptchaSuccess() {
       document.getElementById("captcha-overlay").style.display = "none";
+      document.getElementById("site-content").style.display = "block";
     }
   </script>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>
