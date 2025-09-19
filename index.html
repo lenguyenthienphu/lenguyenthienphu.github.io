@@ -71,32 +71,29 @@
   <!-- Contact -->
   <section id="contact">
     <h2>Contact Me</h2>
-    <p><i class="fas fa-envelope"></i> thienphu120203@gmail.com</p>
-    <p><i class="fab fa-github"></i> <a href="https://github.com/lenguyenthienphu">github.com/lenguyenthienphu</a></p>
-    <p><i class="fab fa-linkedin"></i> <a href="#">linkedin.com/in/thienphu</a></p>
+    <form action="https://formspree.io/f/xnnbeznb" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+
+      <!-- Cloudflare Turnstile CAPTCHA -->
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAAB2LybBMUumXd1k-"></div>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="contact-info">
+      <p><i class="fas fa-envelope"></i> thienphu120203@gmail.com</p>
+      <p><i class="fab fa-github"></i> <a href="https://github.com/lenguyenthienphu">github.com/lenguyenthienphu</a></p>
+      <p><i class="fab fa-linkedin"></i> <a href="#">linkedin.com/in/thienphu</a></p>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <p>© 2025 Le Nguyen Thien Phu. All rights reserved.</p>
   </footer>
+
+  <!-- Turnstile script -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>
-
-<!-- Contact -->
-<section id="contact">
-  <h2>Contact Me</h2>
-  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" required></textarea>
-
-    <!-- Cloudflare Turnstile CAPTCHA -->
-    <div class="cf-turnstile" data-sitekey="0x4AAAAAAB2LybBMUumXd1k-"></div>
-
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-<!-- Turnstile script -->
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
