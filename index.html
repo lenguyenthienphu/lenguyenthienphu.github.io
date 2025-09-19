@@ -13,24 +13,46 @@
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+
+  <!-- Cloudflare Turnstile -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+  <style>
+    /* Overlay che toàn site */
+    #captcha-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #0f2027;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+    #site-content {
+      display: none; /* Ẩn site cho đến khi xác thực */
+    }
+    .cf-turnstile {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <!-- Captcha Overlay -->
+  <!-- CAPTCHA Overlay -->
   <div id="captcha-overlay">
-    <div class="captcha-box">
-      <h2>🔒 Please verify you are human</h2>
-      <div class="cf-turnstile"
-           data-sitekey="0x4AAAAAAB2N2JQDH_HjHJqd"
-           data-theme="dark"
-           data-size="normal"
-           data-callback="onCaptchaSuccess">
-      </div>
-    </div>
-  </div>
+    <h2>Please verify to continue</h2>
+    <div class="cf-turnstile"
+     data-sitekey="0x4AAAAAAB2LybBMUumXd1k-"
+     data-callback="onCaptchaSuccess"
+     data-theme="light"
+     data-size="flexible">
+</div>
 
-  <!-- Main Content -->
-  <div id="site-content" style="display:none;">
-    <!-- Header -->
+
+  <!-- Nội dung web -->
+  <div id="site-content">
     <header>
       <nav>
         <h1 class="logo">Phu<span>.</span></h1>
@@ -49,17 +71,13 @@
       </div>
     </header>
 
-    <!-- About -->
     <section id="about">
       <h2>About Me</h2>
-      <p>
-        I am a graduate in Information Security from FPT University. 
-        Passionate about Web Application Security, AI-driven WAF, and data-driven cybersecurity. 
-        GPA: <strong>3.6/4.0</strong>.
-      </p>
+      <p>I am a graduate in Information Security from FPT University. 
+      Passionate about Web Application Security, AI-driven WAF, and data-driven cybersecurity. 
+      GPA: <strong>3.6/4.0</strong>.</p>
     </section>
 
-    <!-- Skills -->
     <section id="skills">
       <h2>Skills</h2>
       <div class="skills-grid">
@@ -72,7 +90,6 @@
       </div>
     </section>
 
-    <!-- Certificates -->
     <section id="certs">
       <h2>Certificates</h2>
       <div class="cert-grid">
@@ -87,7 +104,6 @@
       </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact">
       <h2>Contact Me</h2>
       <form action="https://formspree.io/f/xnnbeznb" method="POST" class="contact-form">
@@ -96,25 +112,19 @@
         <textarea name="message" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
-      <div class="contact-info">
-        <p><i class="fas fa-envelope"></i> thienphu120203@gmail.com</p>
-        <p><i class="fab fa-github"></i> 
-          <a href="https://github.com/lenguyenthienphu">github.com/lenguyenthienphu</a></p>
-        <p><i class="fab fa-linkedin"></i> 
-          <a href="#">linkedin.com/in/thienphu</a></p>
-      </div>
+      <p><i class="fas fa-envelope"></i> thienphu120203@gmail.com</p>
+      <p><i class="fab fa-github"></i> <a href="https://github.com/lenguyenthienphu">github.com/lenguyenthienphu</a></p>
+      <p><i class="fab fa-linkedin"></i> <a href="#">linkedin.com/in/thienphu</a></p>
     </section>
 
-    <!-- Footer -->
     <footer>
       <p>© 2025 Le Nguyen Thien Phu. All rights reserved.</p>
     </footer>
   </div>
 
-  <!-- Cloudflare Turnstile -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script>
-    function onCaptchaSuccess() {
+    // Khi captcha success -> show site
+    function onCaptchaSuccess(token) {
       document.getElementById("captcha-overlay").style.display = "none";
       document.getElementById("site-content").style.display = "block";
     }
