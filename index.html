@@ -1,15 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Le Nguyen Thien Phu - Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Nguyen Thien Phu | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1>Hello, I'm Le Nguyen Thien Phu 👋</h1>
-  <p>Graduated in Information Security - FPT University</p>
-  <p>GPA: 3.2/4.0</p>
-  <p>Certificates: Cisco CCNA, Security+</p>
-  <p><a href="https://github.com/lenguyenthienphu">My GitHub</a></p>
+  <!-- Header -->
+  <header>
+    <nav>
+      <h1 class="logo">Phu<span>.</span></h1>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certs">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <img src="assets/profile.jpg" alt="Profile" class="profile-pic">
+      <h2>Hello, I'm <span>Le Nguyen Thien Phu</span></h2>
+      <p>Cybersecurity Graduate | FPT University</p>
+      <a href="#contact" class="btn">Get In Touch</a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a graduate in Information Security from FPT University. 
+      Passionate about Web Application Security, AI-driven WAF, and data-driven cybersecurity. 
+      GPA: <strong>3.6/4.0</strong>.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">Web Security</div>
+      <div class="skill-card">OWASP Top 10</div>
+      <div class="skill-card">Python</div>
+      <div class="skill-card">Machine Learning</div>
+      <div class="skill-card">Linux & Networking</div>
+      <div class="skill-card">Cisco Networking</div>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section id="certs">
+    <h2>Certificates</h2>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <img src="assets/certificate1.png" alt="Cisco Cert">
+        <p>Cisco CyberOps Associate</p>
+      </div>
+      <div class="cert-card">
+        <img src="assets/certificate2.png" alt="Other Cert">
+        <p>Other Cybersecurity Certificate</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p><i class="fas fa-envelope"></i> thienphu120203@gmail.com</p>
+    <p><i class="fab fa-github"></i> <a href="https://github.com/lenguyenthienphu">github.com/lenguyenthienphu</a></p>
+    <p><i class="fab fa-linkedin"></i> <a href="#">linkedin.com/in/thienphu</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Le Nguyen Thien Phu. All rights reserved.</p>
+  </footer>
 </body>
 </html>
