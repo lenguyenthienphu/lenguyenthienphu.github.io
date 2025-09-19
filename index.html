@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Le Nguyen Thien Phu | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,34 +14,43 @@
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
 
-  <!-- AOS (animation) -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   <!-- Cloudflare Turnstile -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
   <style>
-    body { margin:0; font-family:'Poppins',sans-serif; background:#0f2027; color:#fff; }
-    #gate { display:flex; justify-content:center; align-items:center; height:100vh; }
-    .box { background:#203a43; padding:2rem; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.4); text-align:center; }
-    h2 { margin-bottom:1rem; }
-    #content { display:none; }
+    /* Overlay che toàn site */
+    #captcha-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #0f2027;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+    #site-content {
+      display: none; /* Ẩn site cho đến khi xác thực */
+    }
+    .cf-turnstile {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
-  <!-- 🔒 Gate page -->
-  <div id="gate">
-    <div class="box">
-      <h2>🔒 Please verify you are human</h2>
-      <div class="cf-turnstile"
-           data-sitekey="0x4AAAAAAB2LybBMUumXd1k-"
-           data-callback="onVerified"></div>
-    </div>
+  <!-- CAPTCHA Overlay -->
+  <div id="captcha-overlay">
+    <h2>Please verify to continue</h2>
+    <div class="cf-turnstile"
+         data-sitekey="0x4AAAAAAB2LybBMUumXd1k-"
+         data-callback="onCaptchaSuccess"
+         data-theme="light"></div>
   </div>
 
-  <!-- 🌐 Real Website -->
-  <div id="content">
-    <!-- Header -->
+  <!-- Nội dung web -->
+  <div id="site-content">
     <header>
       <nav>
         <h1 class="logo">Phu<span>.</span></h1>
@@ -52,7 +61,7 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <div class="hero" data-aos="fade-up">
+      <div class="hero">
         <img src="assets/profile.jpg" alt="Profile" class="profile-pic">
         <h2>Hello, I'm <span>Le Nguyen Thien Phu</span></h2>
         <p>Cybersecurity Graduate | FPT University</p>
@@ -60,46 +69,40 @@
       </div>
     </header>
 
-    <!-- About -->
-    <section id="about" data-aos="fade-up">
+    <section id="about">
       <h2>About Me</h2>
-      <p>
-        I am a graduate in Information Security from FPT University. 
-        Passionate about Web Application Security, AI-driven WAF, and data-driven cybersecurity. 
-        GPA: <strong>3.6/4.0</strong>.
-      </p>
+      <p>I am a graduate in Information Security from FPT University. 
+      Passionate about Web Application Security, AI-driven WAF, and data-driven cybersecurity. 
+      GPA: <strong>3.6/4.0</strong>.</p>
     </section>
 
-    <!-- Skills -->
     <section id="skills">
-      <h2 data-aos="fade-up">Skills</h2>
+      <h2>Skills</h2>
       <div class="skills-grid">
-        <div class="skill-card" data-aos="zoom-in">Web Security</div>
-        <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">OWASP Top 10</div>
-        <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">Python</div>
-        <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">Machine Learning</div>
-        <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">Linux & Networking</div>
-        <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">Cisco Networking</div>
+        <div class="skill-card">Web Security</div>
+        <div class="skill-card">OWASP Top 10</div>
+        <div class="skill-card">Python</div>
+        <div class="skill-card">Machine Learning</div>
+        <div class="skill-card">Linux & Networking</div>
+        <div class="skill-card">Cisco Networking</div>
       </div>
     </section>
 
-    <!-- Certificates -->
     <section id="certs">
-      <h2 data-aos="fade-up">Certificates</h2>
+      <h2>Certificates</h2>
       <div class="cert-grid">
-        <div class="cert-card" data-aos="flip-left">
+        <div class="cert-card">
           <img src="assets/certificate1.png" alt="Cisco Cert">
           <p>Cisco CyberOps Associate</p>
         </div>
-        <div class="cert-card" data-aos="flip-left" data-aos-delay="200">
+        <div class="cert-card">
           <img src="assets/certificate2.png" alt="Other Cert">
           <p>Other Cybersecurity Certificate</p>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" data-aos="fade-up">
+    <section id="contact">
       <h2>Contact Me</h2>
       <form action="https://formspree.io/f/xnnbeznb" method="POST" class="contact-form">
         <input type="text" name="name" placeholder="Your Name" required>
@@ -107,28 +110,21 @@
         <textarea name="message" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
-      <div class="contact-info">
-        <p><i class="fas fa-envelope"></i> thienphu120203@gmail.com</p>
-        <p><i class="fab fa-github"></i> 
-           <a href="https://github.com/lenguyenthienphu">github.com/lenguyenthienphu</a></p>
-        <p><i class="fab fa-linkedin"></i> 
-           <a href="#">linkedin.com/in/thienphu</a></p>
-      </div>
+      <p><i class="fas fa-envelope"></i> thienphu120203@gmail.com</p>
+      <p><i class="fab fa-github"></i> <a href="https://github.com/lenguyenthienphu">github.com/lenguyenthienphu</a></p>
+      <p><i class="fab fa-linkedin"></i> <a href="#">linkedin.com/in/thienphu</a></p>
     </section>
 
-    <!-- Footer -->
     <footer>
       <p>© 2025 Le Nguyen Thien Phu. All rights reserved.</p>
     </footer>
   </div>
 
-  <!-- JS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, once: true });
-    function onVerified(token) {
-      document.getElementById("gate").style.display = "none";
-      document.getElementById("content").style.display = "block";
+    // Khi captcha success -> show site
+    function onCaptchaSuccess(token) {
+      document.getElementById("captcha-overlay").style.display = "none";
+      document.getElementById("site-content").style.display = "block";
     }
   </script>
 </body>
