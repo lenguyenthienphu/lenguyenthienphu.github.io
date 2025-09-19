@@ -5,10 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Le Nguyen Thien Phu | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (icons) -->
   <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+
+  <!-- AOS (Animate on Scroll) CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <!-- Header -->
@@ -22,7 +29,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="hero">
+    <div class="hero" data-aos="fade-up">
       <img src="assets/profile.jpg" alt="Profile" class="profile-pic">
       <h2>Hello, I'm <span>Le Nguyen Thien Phu</span></h2>
       <p>Cybersecurity Graduate | FPT University</p>
@@ -31,7 +38,7 @@
   </header>
 
   <!-- About -->
-  <section id="about">
+  <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
     <p>
       I am a graduate in Information Security from FPT University. 
@@ -42,26 +49,26 @@
 
   <!-- Skills -->
   <section id="skills">
-    <h2>Skills</h2>
+    <h2 data-aos="fade-up">Skills</h2>
     <div class="skills-grid">
-      <div class="skill-card">Web Security</div>
-      <div class="skill-card">OWASP Top 10</div>
-      <div class="skill-card">Python</div>
-      <div class="skill-card">Machine Learning</div>
-      <div class="skill-card">Linux & Networking</div>
-      <div class="skill-card">Cisco Networking</div>
+      <div class="skill-card" data-aos="zoom-in">Web Security</div>
+      <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">OWASP Top 10</div>
+      <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">Python</div>
+      <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">Machine Learning</div>
+      <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">Linux & Networking</div>
+      <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">Cisco Networking</div>
     </div>
   </section>
 
   <!-- Certificates -->
   <section id="certs">
-    <h2>Certificates</h2>
+    <h2 data-aos="fade-up">Certificates</h2>
     <div class="cert-grid">
-      <div class="cert-card">
+      <div class="cert-card" data-aos="flip-left">
         <img src="assets/certificate1.png" alt="Cisco Cert">
         <p>Cisco CyberOps Associate</p>
       </div>
-      <div class="cert-card">
+      <div class="cert-card" data-aos="flip-left" data-aos-delay="200">
         <img src="assets/certificate2.png" alt="Other Cert">
         <p>Other Cybersecurity Certificate</p>
       </div>
@@ -69,7 +76,7 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="contact" data-aos="fade-up">
     <h2>Contact Me</h2>
     <form action="https://formspree.io/f/xnnbeznb" method="POST" class="contact-form">
       <input type="text" name="name" placeholder="Your Name" required>
@@ -83,8 +90,10 @@
     </form>
     <div class="contact-info">
       <p><i class="fas fa-envelope"></i> thienphu120203@gmail.com</p>
-      <p><i class="fab fa-github"></i> <a href="https://github.com/lenguyenthienphu">github.com/lenguyenthienphu</a></p>
-      <p><i class="fab fa-linkedin"></i> <a href="#">linkedin.com/in/thienphu</a></p>
+      <p><i class="fab fa-github"></i> 
+         <a href="https://github.com/lenguyenthienphu">github.com/lenguyenthienphu</a></p>
+      <p><i class="fab fa-linkedin"></i> 
+         <a href="#">linkedin.com/in/thienphu</a></p>
     </div>
   </section>
 
@@ -93,7 +102,16 @@
     <p>© 2025 Le Nguyen Thien Phu. All rights reserved.</p>
   </footer>
 
-  <!-- Turnstile script -->
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,  // thời gian hiệu ứng
+      once: true       // chạy 1 lần khi scroll
+    });
+  </script>
+
+  <!-- Cloudflare Turnstile script -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>
