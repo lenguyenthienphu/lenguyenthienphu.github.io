@@ -19,8 +19,14 @@
   <!-- Captcha Overlay -->
   <div id="captcha-overlay">
     <div class="captcha-box">
-      <h2>Please verify you are human</h2>
-      <div class="cf-turnstile" data-sitekey="0x4AAAAAAB2LybBMUumXd1k-"></div>
+      <h2>🔒 Please verify to continue</h2>
+      <div class="cf-turnstile"
+           data-sitekey="0x4AAAAAAB2LybBMUumXd1k-"
+           data-theme="light"
+           data-size="flexible"
+           data-refresh-expired="true"
+           data-callback="onCaptchaSuccess">
+      </div>
     </div>
   </div>
 
@@ -108,16 +114,10 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 1000, once: true });
+    function onCaptchaSuccess(token) {
+      document.getElementById("captcha-overlay").style.display = "none";
+    }
   </script>
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-  <script>
-    // Hide overlay when captcha solved
-    window.onload = () => {
-      document.addEventListener("turnstile-success", function() {
-        document.getElementById("captcha-overlay").style.display = "none";
-      });
-    };
-  </script>
 </body>
 </html>
-
